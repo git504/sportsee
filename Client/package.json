@@ -1,0 +1,15 @@
+{
+  "name": "sportsee",
+  "version": "1.0.0",
+  "description": "sportSee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "git504 for Openclassrooms",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "styled-components": "^5.3.5"
+  }
+}
