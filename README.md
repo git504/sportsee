@@ -1,4 +1,5 @@
 # sportsee🏃
+
 ![SportSee logo](Public/logo.png)
 
 Integrate **charts and graphs** with **React** for **SportSee**, a sports analytics dashboard.
@@ -7,11 +8,11 @@ Integrate **charts and graphs** with **React** for **SportSee**, a sports analyt
 
 ## Installation
 
-###  `Clone project`
- ```bash
- git clone https://github.com/git504/sportsee.git
- ```
+### `Clone project`
 
+```bash
+git clone https://github.com/git504/sportsee.git
+```
 
 ---
 
@@ -19,9 +20,10 @@ Integrate **charts and graphs** with **React** for **SportSee**, a sports analyt
 
 ```bash
 cd Client
-npm start
+npm run start
 ```
-Please open [http://localhost:8080](http://localhost:8080) to view the website in your browser.
+
+Please open [http://localhost:3000](http://localhost:3000) to view the website in your browser.
 
 ---
 
@@ -31,4 +33,5 @@ Please open [http://localhost:8080](http://localhost:8080) to view the website i
 cd ..
 cd Server
 ```
+
 Then go to the [README](./Server/README.md "readme, to launch the backend") file
