@@ -22,14 +22,16 @@ git clone https://github.com/git504/sportsee.git
 cd Client && npm install && run start
 ```
 
-Please open [localhost:3000](http://localhost:3000) to view the website in your browser.
+🔌 [localhost:3000](http://localhost:3000)
 
 ---
 
 ### `🚀 then... Back-End launching`
 
 ```bash
-cd ../Server && nvm install 12.18 && npm install && nvm use 12.18
+cd ../Server && nvm install 12.18 && npm install && nvm use 12.18 && npm run start
 ```
 
-[README_SERVER_FILE ](./Server/README.md "readme, to launch the backend")
+🔌 [localhost:1234](http://localhost:1234)
+
+
