@@ -1,0 +1,22 @@
+{
+  "current": {
+    "colors": {
+      "primary": "#020203",
+      "secondary": "#e60000",
+      "white": "#fff",
+      "grey": "#fbfbfb",
+      "darkgrey": "#74798c",
+      "red": "#ff0000",
+      "black": "#282d30"
+    },
+    "typo": {}
+  },
+  "contrast": {
+    "colors": {},
+    "typo": {}
+  },
+  "dark": {
+    "colors": {},
+    "typo": {}
+  }
+}
