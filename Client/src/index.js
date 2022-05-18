@@ -19,7 +19,11 @@ import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
-
+/**
+ * @file index.js is the home page for this app
+ * @author Git504
+ * @see <a href="https://github.com/git504">Git504 Page<a/>
+ */
 
 ReactDOM.render(
   <React.StrictMode>
