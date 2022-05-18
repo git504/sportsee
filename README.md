@@ -36,11 +36,9 @@ cd ../Server && nvm install 12.18 && npm install && nvm use 12.18 && npm run sta
 
 🔌 [localhost:1234](http://localhost:1234)
 
-### `🚀 to see the standard JSDoc`
+### `🚀 JSDoc`
 
-```bash
-cd ./Client && npm run jsdoc
-```
+[to see the standard JSDoc simply **CLICK here**](https://git504.github.io/sportsee/)
 
 ---
 
