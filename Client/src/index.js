@@ -19,6 +19,8 @@ import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
@@ -27,11 +29,11 @@ ReactDOM.render(
         <Header />
         <Sidebar />
         <Routes>
-          <Route path="/*" element={<PageNotFound />} />
           <Route index element={<Home />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/community" element={<Community />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </ThemeProvider>
     </Router>
