@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.js": "/static/js/main.12d9ecc9.js",
+    "main.js": "/static/js/main.32c540cf.js",
     "static/js/787.a8762e9d.chunk.js": "/static/js/787.a8762e9d.chunk.js",
     "static/media/logo.svg": "/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
+    "static/media/swimmer.svg": "/static/media/swimmer.bc12b705d445672f550a8441d581c700.svg",
+    "static/media/biker.svg": "/static/media/biker.fe885ecda828d3e2f637bb3b675db76c.svg",
+    "static/media/apple.svg": "/static/media/apple.1c96dc7e41fec65924680349e033ee53.svg",
+    "static/media/chicken.svg": "/static/media/chicken.ffbc3b88a759c706993bb26fbd66113b.svg",
+    "static/media/yoga.svg": "/static/media/yoga.76760efccddf14928ee9263744c1b6e6.svg",
+    "static/media/cheeseburger.svg": "/static/media/cheeseburger.18f60e0efe37e86bcac036d673f0bab0.svg",
+    "static/media/energy.svg": "/static/media/energy.25fef86ed5860200bdf90f9cd185e1e3.svg",
     "index.html": "/index.html",
-    "main.12d9ecc9.js.map": "/static/js/main.12d9ecc9.js.map",
+    "static/media/dumbbell.svg": "/static/media/dumbbell.9d22814b98d0ca386d9ddacded4eae80.svg",
+    "main.32c540cf.js.map": "/static/js/main.32c540cf.js.map",
     "787.a8762e9d.chunk.js.map": "/static/js/787.a8762e9d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.12d9ecc9.js"
+    "static/js/main.32c540cf.js"
   ]
 }
