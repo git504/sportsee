@@ -1,11 +1,14 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
 
+// CSS
+import { StyledUser } from "./styles/User.styled";
+
 function User() {
   return (
-    <div className="profil">
+    <StyledUser className="user">
       <Dashboard />
-    </div>
+    </StyledUser>
   );
 }
 
