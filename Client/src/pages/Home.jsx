@@ -1,22 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // CSS
 import { StyledHome } from "./styles/Home.styled";
 
 // components
-let setUserToken12 = () => {
-  localStorage.setItem("accessToken", 12);
-};
-
 const Home = () => {
+  const navigate = useNavigate();
+
+  const SetUserToken = (id) => {
+    localStorage.removeItem("accessToken");
+    localStorage.setItem("accessToken", id);
+    navigate(`/user/${id}`);
+  };
+
   return (
     <StyledHome className="home">
-      <ul className="home__links">
-        <Link to="/user/12" className="home__links--link">
-          <li onClick={setUserToken12}>Infos utilisateur __mock12__</li>
-        </Link>
-      </ul>
+      <div className="home__links">
+        <button
+          className="home__links--link"
+          onClick={() => {
+            SetUserToken(12);
+          }}
+        >
+          user __mock12__
+        </button>
+        <button
+          className="home__links--link"
+          onClick={() => {
+            SetUserToken(18);
+          }}
+        >
+          user __mock18__
+        </button>
+      </div>
     </StyledHome>
   );
 };

@@ -2,6 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
+// Data
+import {
+  getUser,
+  getActivity,
+  getAverageSessions,
+  getPerformance,
+} from "../api/api";
+
 // Components
 import HeaderDashboard from "./HeaderDashboard";
 import Kpi from "./Kpi";
@@ -25,51 +33,24 @@ function Dashboard() {
   const [getUserAverageSession, setgetUserAverageSession] = useState({});
   const [getUserPerformance, setgetUserPerformance] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [userStatus, setuserStatus] = useState();
 
   useEffect(() => {
-    const fetch = async () => {
-      const userData = await axios
-        .get(`http://localhost:1234/user/${id}`)
-        .then((response) => {
-          if (response.status === 200) {
-            console.log(response.status);
-            setuserStatus(true);
-            return response;
-          } else if (response.status !== 200) {
-            console.log(response.status);
-            setuserStatus(false);
-          }
-        });
+    const fetch = async (id) => {
+      const userData = await getUser(id);
+      const activity = await getActivity(id);
+      const averageSessions = await getAverageSessions(id);
+      const performance = await getPerformance(id);
 
-      const activity = await axios
-        .get(`http://localhost:1234/user/${id}/activity`)
-        .then((response) => {
-          console.log(response.data);
-          return response.data;
-        });
-      const averageSessions = await axios
-        .get(`http://localhost:1234/user/${id}/average-sessions`)
-        .then((response) => {
-          console.log(response.data);
-          return response.data;
-        });
-      const performance = await axios
-        .get(`http://localhost:1234/user/${id}/performance`)
-        .then((response) => {
-          console.log(response.data);
-          return response.data;
-        });
       setgetUserById(userData.data);
       setgetUserActivityById(activity);
       setgetUserAverageSession(averageSessions);
       setgetUserPerformance(performance);
       setIsLoading(false);
     };
-    fetch();
+    fetch(id);
   }, [id]);
 
-   const USER_INFOS = !isLoading
+  const USER_INFOS = !isLoading
     ? new User(
         getUserById?.data.userInfos.firstName,
         getUserById?.data.userInfos.lastName,
@@ -86,7 +67,7 @@ function Dashboard() {
     <StyledDashboard className="dashboard">
       {isLoading ? (
         <p>Wait and sportSee... 😎</p>
-      ) : userStatus && tokenId === id ? (
+      ) : tokenId === id ? (
         <>
           <HeaderDashboard first={USER_INFOS.firstName} />
           <div className="dashboard__charts">
