@@ -4,7 +4,7 @@ async function getUser(id) {
   try {
     const response = await axios.get(`http://localhost:1234/user/${id}`);
     console.log(response);
-    return response;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
