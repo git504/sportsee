@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 // Data
 import {
@@ -29,8 +29,7 @@ import apple from "../design/apple.svg";
 
 function Dashboard() {
   let { id } = useParams();
-  const token = localStorage.getItem("accessToken");
-  const [tokenId, settokenId] = useState(token);
+  // const token = localStorage.getItem("accessToken");
   const [getUserById, setgetUserById] = useState({});
   const [getUserActivityById, setgetUserActivityById] = useState({});
   const [getUserAverageSessionById, setgetUserAverageSessionById] = useState(
@@ -72,7 +71,7 @@ function Dashboard() {
     <StyledDashboard className="dashboard">
       {isLoading ? (
         <p>Wait and sportSee... 😎</p>
-      ) : tokenId === id ? (
+      ) : (
         <>
           <HeaderDashboard first={USER_CLASS.firstName} />
           <div className="dashboard__charts">
@@ -114,13 +113,6 @@ function Dashboard() {
             </div>
           </div>
         </>
-      ) : (
-        ((
-          <>
-            <p>USER CONFLICT</p>
-          </>
-        ),
-        (localStorage.removeItem("accessToken"), settokenId()))
       )}
     </StyledDashboard>
   );

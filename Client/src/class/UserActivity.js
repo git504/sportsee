@@ -1,47 +1,20 @@
 class UserActivity {
-  constructor(
-    firstName,
-    lastName,
-    age,
-    score,
-    calorie,
-    protein,
-    carbohydrate,
-    lipid
-  ) {
-    this._firstName = firstName;
-    this._lastName = lastName;
-    this._age = age;
-    this._score = score;
-    this._calorie = calorie;
-    this._protein = protein;
-    this._carbohydrate = carbohydrate;
-    this._lipid = lipid;
+  constructor(data) {
+    this._activities = data.data.sessions.map((session) => {
+      // console.log(this.initDate(session.day));
+      return {
+        name: this.initDate(session.day),
+        ...session,
+      };
+    });
   }
+  initDate = (date) => {
+    const day = new Date(date);
+    return day.getDate().toString();
+  };
 
-  get firstName() {
-    return this._firstName;
-  }
-  get lastName() {
-    return this._lastName;
-  }
-  get age() {
-    return this._age;
-  }
-  get score() {
-    return this._score;
-  }
-  get calorie() {
-    return this._calorie;
-  }
-  get protein() {
-    return this._protein;
-  }
-  get carbohydrate() {
-    return this._carbohydrate;
-  }
-  get lipid() {
-    return this._lipid;
+  get initActivity() {
+    return this._activities;
   }
 }
 
