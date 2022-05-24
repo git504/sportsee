@@ -17,15 +17,13 @@ import UserAverageSession from "../class/UserAverageSession";
 // CSS
 import { StyledAverageSession } from "./styles/AverageSession.styled";
 
-function AverageSession({ averageSessionsData }) {
+const AverageSession = ({ averageSessionsData }) => {
   const AVERAGE_SESSIONS = new UserAverageSession(averageSessionsData);
-  console.log(AVERAGE_SESSIONS);
 
   return (
     <>
       <StyledAverageSession className="average-session">
-        <div className="average-session--label">Durée moyenne des sessions</div>
-
+        <h6 className="average-session--label">Durée moyenne des sessions</h6>
         {/* <ResponsiveContainer width="100%" height={250}> */}
         <AreaChart
           width={233}
@@ -55,7 +53,7 @@ function AverageSession({ averageSessionsData }) {
               backgroundColor: "#ffffff",
               fontSize: "10px",
               padding: "rem",
-              margin: 0,
+              margin: 3,
               border: 0,
             }}
             formatter={(name, value) => [name, ""]}
@@ -90,10 +88,10 @@ function AverageSession({ averageSessionsData }) {
       </StyledAverageSession>
     </>
   );
-}
-
-export default AverageSession;
+};
 
 AverageSession.propTypes = {
   averageSessionsData: PropTypes.object.isRequired,
 };
+
+export default AverageSession;

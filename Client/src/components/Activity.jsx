@@ -32,13 +32,13 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function Activity({ userActivityData }) {
+const Activity = ({ userActivityData }) => {
   const ACTIVITY_CLASS = new UserActivity(userActivityData);
 
   return (
     <>
       <StyledActivity className="activity">
-        <div className="activity__title">Activité quotidienne</div>
+        <h6 className="activity__title">Activité quotidienne</h6>
         <ResponsiveContainer>
           <BarChart
             width={500}
@@ -105,7 +105,7 @@ function Activity({ userActivityData }) {
       </StyledActivity>
     </>
   );
-}
+};
 
 Activity.propTypes = {
   userActivityData: PropTypes.object.isRequired,

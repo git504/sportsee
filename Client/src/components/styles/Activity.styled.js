@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledActivity = styled.div`
+export const StyledActivity = styled.section`
   &.activity {
     width: 100%;
     height: 52%;

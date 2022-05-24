@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const StyledAverageSession = styled.div`
+export const StyledAverageSession = styled.section`
   &.average-session {
     background: ${({ theme }) => theme.current.colors.red};
     border-radius: 5px;
     position: relative;
-    font-size: 10px;
-    height : 240;
+    font-size: 11px;
+    height: 240px;
 
     .average-session--label {
       position: absolute;
