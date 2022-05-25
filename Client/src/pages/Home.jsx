@@ -20,14 +20,6 @@ const Home = () => {
         <button
           className="home__links--link"
           onClick={() => {
-            SetUserToken(12);
-          }}
-        >
-          user __mock12__
-        </button>
-        <button
-          className="home__links--link"
-          onClick={() => {
             SetUserToken(18);
           }}
         >

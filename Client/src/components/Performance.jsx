@@ -18,8 +18,8 @@ import { StyledPerformance } from "./styles/Performance.styled";
 
 const Performance = ({ performanceData }) => {
   const PERFORMANCE = new UserPerformance(performanceData);
-  console.log(performanceData);
-  console.log(PERFORMANCE.performance);
+  // console.log(performanceData);
+  // console.log(PERFORMANCE.performance);
 
   return (
     <StyledPerformance>

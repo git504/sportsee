@@ -8,6 +8,7 @@ class UserActivity {
       };
     });
   }
+  
   initDate = (date) => {
     const day = new Date(date);
     return day.getDate().toString();

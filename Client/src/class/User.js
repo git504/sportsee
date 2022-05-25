@@ -31,6 +31,18 @@ class User {
   get score() {
     return this._score;
   }
+
+  get arrayOfPercentScore() {
+    return this.calcScore();
+  }
+
+  calcScore() {
+    return [
+      { name: "score", value: this._score * 100 },
+      { name: "total", value: 100 - this._score * 100 },
+    ];
+  }
+
   get calorie() {
     return this._calorie;
   }

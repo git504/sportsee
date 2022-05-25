@@ -59,7 +59,7 @@ function Dashboard() {
         getUserById?.data.userInfos.firstName,
         getUserById?.data.userInfos.lastName,
         getUserById?.data.userInfos.age,
-        getUserById?.data.score ? getUserById.score : getUserById.todayScore,
+        getUserById?.data.score,
         getUserById?.data.keyData.calorieCount,
         getUserById?.data.keyData.proteinCount,
         getUserById?.data.keyData.carbohydrateCount,
@@ -79,7 +79,7 @@ function Dashboard() {
               <Activity userActivityData={getUserActivityById} />
               <AverageSession averageSessionsData={getUserAverageSessionById} />
               <Performance performanceData={getUserPerformanceById} />
-              <Score scoreData={USER_CLASS.score} />
+              <Score scoreData={USER_CLASS.arrayOfPercentScore} />
             </div>
             <div className="dashboard__charts-right">
               <Kpi
