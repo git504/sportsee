@@ -59,7 +59,9 @@ function Dashboard() {
         getUserById?.data.userInfos.firstName,
         getUserById?.data.userInfos.lastName,
         getUserById?.data.userInfos.age,
-        getUserById?.data.score,
+        getUserById?.data.score
+          ? getUserById.data.score
+          : getUserById.data.todayScore,
         getUserById?.data.keyData.calorieCount,
         getUserById?.data.keyData.proteinCount,
         getUserById?.data.keyData.carbohydrateCount,
