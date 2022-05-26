@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/Home.js</title>
+    <title>JSDoc: Source: pages/Settings.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/Home.js</h1>
+    <h1 class="page-title">Source: pages/Settings.js</h1>
 
     
 
@@ -27,54 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import { useNavigate } from "react-router-dom";
-
-// CSS
-import { StyledHome } from "./styles/Home.styled";
 
 /**
- * @file Home, a REACT functional component. HOME PAGE
+ * @file Settings, a REACT functional component. SETTING PAGE
  */
 
-// components
-const Home = () => {
-  const navigate = useNavigate();
-
-  /**
-   * @function SetUserToken
-   * @param {number} id user id in url
-   * @description login function : new ID "accessToken" , then navigate to the single user dashboard thanks to his id.
-   */
-  const SetUserToken = (id) => {
-    localStorage.removeItem("accessToken");
-    localStorage.setItem("accessToken", id);
-    navigate(`/user/${id}`);
-  };
-
+function Settings() {
   return (
-    &lt;StyledHome className="home">
-      &lt;div className="home__links">
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(18);
-          }}
-        >
-          user __mock18__
-        &lt;/button>
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(12);
-          }}
-        >
-          user __mock12__
-        &lt;/button>
-      &lt;/div>
-    &lt;/StyledHome>
+    &lt;div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+      veritatis illo saepe laboriosam, ullam nulla natus impedit necessitatibus
+      sequi incidunt reprehenderit libero soluta ea adipisci explicabo, fugiat
+      tempore voluptatum nam inventore quia sed doloremque temporibus laborum.
+      Dolorum reiciendis repudiandae id quas excepturi repellendus ab in
+      provident non autem fugiat possimus nostrum facilis veniam nulla inventore
+      cum necessitatibus, quam fuga quibusdam impedit ex ducimus? Voluptates,
+      fuga. Fugit, modi? Quam placeat odit, ut impedit dolor quidem aperiam,
+      harum aut, quas dignissimos tempora. Ut possimus omnis nam quaerat rem
+      error libero exercitationem tempora animi ipsa repellendus, dolorem
+      voluptatem fuga, saepe aperiam repellat. Hic dicta neque nisi voluptatum.
+      Eius rerum dolorem ex voluptas, tempore sed cum deserunt aut inventore.
+      Veniam quae ab quod impedit consequuntur vitae voluptate. In modi quisquam
+      nostrum eos nobis perspiciatis perferendis, sit ab.
+    &lt;/div>
   );
-};
-export default Home;
+}
+
+export default Settings;
 </code></pre>
         </article>
     </section>

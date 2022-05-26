@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 // CSS
 import { StyledHome } from "./styles/Home.styled";
 
+/**
+ * @file Home, a REACT functional component. HOME PAGE
+ */
+
 // components
 const Home = () => {
   const navigate = useNavigate();

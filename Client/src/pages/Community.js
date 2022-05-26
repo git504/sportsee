@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * @file Community, a REACT functional component. COMMUNITY PAGE
+ */
+
 function Community() {
   return (
     <div>

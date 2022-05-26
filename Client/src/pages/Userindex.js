@@ -5,6 +5,10 @@ import Dashboard from "../components/Dashboard";
 import { StyledUserindex } from "./styles/Userindex.styled";
 
 /**
+ * @file Userindex, a REACT functional component. USER DASHBOARD PAGE
+ */
+
+/**
  * @description The Dashboard REACT component
  * @property {Function} Userindex print out all the data visualization
  * @returns { HTMLElement}

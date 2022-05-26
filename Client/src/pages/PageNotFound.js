@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * @file PageNotFound, a REACT functional component. 404 PAGE
+ */
+
 function PageNotFound() {
   return (
     <div>

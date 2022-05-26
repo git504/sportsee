@@ -7,28 +7,10 @@ import React from "react";
 import { StyledSidebar } from "./styles/Sidebar.styled";
 
 // DESIGN
-
-/**
- * @file LogoSidebar
- * @author OPENCLASSROOMS
- */
 import LogoSidebar from "./LogoSidebar";
-
-/**
- * @file yoga.svg
- */
 import yoga from "../design/yoga.svg";
-/**
- * @file swimmer.svg
- */
 import natation from "../design/swimmer.svg";
-/**
- * @file biker.svg
- */
 import velo from "../design/biker.svg";
-/**
- * @file dumbbell.svg
- */
 import alter from "../design/dumbbell.svg";
 
 /**

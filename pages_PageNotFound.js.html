@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/Home.js</title>
+    <title>JSDoc: Source: pages/PageNotFound.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/Home.js</h1>
+    <h1 class="page-title">Source: pages/PageNotFound.js</h1>
 
     
 
@@ -27,54 +27,36 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import { useNavigate } from "react-router-dom";
-
-// CSS
-import { StyledHome } from "./styles/Home.styled";
 
 /**
- * @file Home, a REACT functional component. HOME PAGE
+ * @file PageNotFound, a REACT functional component. 404 PAGE
  */
 
-// components
-const Home = () => {
-  const navigate = useNavigate();
-
-  /**
-   * @function SetUserToken
-   * @param {number} id user id in url
-   * @description login function : new ID "accessToken" , then navigate to the single user dashboard thanks to his id.
-   */
-  const SetUserToken = (id) => {
-    localStorage.removeItem("accessToken");
-    localStorage.setItem("accessToken", id);
-    navigate(`/user/${id}`);
-  };
-
+function PageNotFound() {
   return (
-    &lt;StyledHome className="home">
-      &lt;div className="home__links">
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(18);
-          }}
-        >
-          user __mock18__
-        &lt;/button>
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(12);
-          }}
-        >
-          user __mock12__
-        &lt;/button>
-      &lt;/div>
-    &lt;/StyledHome>
+    &lt;div>
+      &lt;p>
+        Le code 404 et ses implications C’est un problème connu de tous : vous
+        cliquez sur un lien, mais une page blanche s’affiche avec le message «
+        erreur 404 » ou encore « 404 file not found » (fichier introuvable) pour
+        vous indiquer que la page est introuvable. Ce code d’erreur 404 est un
+        code de statut HTTP, qui a été standardisé. Soit l’adresse n’existe
+        plus, soit aucune redirection n’a été établie. C’est le navigateur qui
+        démarre une requête sur le serveur. Une fois que le message est
+        transmis, le serveur Internet informe le visiteur si la requête a été
+        traitée correctement, ou bien si une erreur est présente ou qu’une
+        authentification reste nécessaire. Ainsi, le code de statut HTTP est une
+        partie de la réponse transmise par le serveur Web, qui l’intègre
+        systématiquement dans chaque en-tête de réponse HTTP. En ce qui concerne
+        les liens qui mènent vers une page 404, ils sont appelés « liens morts »
+        ou « liens brisés ». La suite de cet article vise à exposer les aspects
+        importants de ce code d’erreur et ses causes.
+      &lt;/p>
+    &lt;/div>
   );
-};
-export default Home;
+}
+
+export default PageNotFound;
 </code></pre>
         </article>
     </section>

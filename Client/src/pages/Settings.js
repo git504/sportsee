@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * @file Settings, a REACT functional component. SETTING PAGE
+ */
+
 function Settings() {
   return (
     <div>

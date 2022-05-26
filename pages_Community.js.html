@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: pages/Home.js</title>
+    <title>JSDoc: Source: pages/Community.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: pages/Home.js</h1>
+    <h1 class="page-title">Source: pages/Community.js</h1>
 
     
 
@@ -27,54 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import { useNavigate } from "react-router-dom";
-
-// CSS
-import { StyledHome } from "./styles/Home.styled";
 
 /**
- * @file Home, a REACT functional component. HOME PAGE
+ * @file Community, a REACT functional component. COMMUNITY PAGE
  */
 
-// components
-const Home = () => {
-  const navigate = useNavigate();
-
-  /**
-   * @function SetUserToken
-   * @param {number} id user id in url
-   * @description login function : new ID "accessToken" , then navigate to the single user dashboard thanks to his id.
-   */
-  const SetUserToken = (id) => {
-    localStorage.removeItem("accessToken");
-    localStorage.setItem("accessToken", id);
-    navigate(`/user/${id}`);
-  };
-
+function Community() {
   return (
-    &lt;StyledHome className="home">
-      &lt;div className="home__links">
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(18);
-          }}
-        >
-          user __mock18__
-        &lt;/button>
-        &lt;button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken(12);
-          }}
-        >
-          user __mock12__
-        &lt;/button>
-      &lt;/div>
-    &lt;/StyledHome>
+    &lt;div>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+      voluptatem ducimus accusantium repellat sed commodi beatae vitae nihil
+      laborum? Eligendi, laudantium nisi? Repudiandae laudantium ab sed eveniet,
+      natus perspiciatis, quasi, minima veritatis vero consectetur quia maxime
+      asperiores tenetur ipsum excepturi atque veniam distinctio ut pariatur?
+      Excepturi quaerat ea, corrupti suscipit blanditiis doloribus vitae sunt
+      incidunt iste at laborum ipsum, delectus earum ut. Magni esse pariatur
+      commodi iure obcaecati, rerum, accusamus voluptatibus alias vel modi ab
+      sequi, sapiente autem adipisci. Ipsam maxime et quae at consectetur
+      praesentium error totam a quia? Adipisci ipsum, quia similique rerum
+      molestias, voluptate praesentium cum omnis magni eum ratione? Architecto a
+      et recusandae? Minus nesciunt dolorem laudantium modi quisquam incidunt
+      delectus sunt reprehenderit possimus alias expedita deleniti eveniet ad
+      facilis totam numquam, illum vel, natus perferendis nam cumque nulla?
+    &lt;/div>
   );
-};
-export default Home;
+}
+
+export default Community;
 </code></pre>
         </article>
     </section>
