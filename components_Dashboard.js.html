@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Dashboard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Dashboard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+// Data
+import {
+  getUser,
+  getActivity,
+  getAverageSessions,
+  getPerformance,
+} from "../api/api";
+
+// Components
+import HeaderDashboard from "./HeaderDashboard";
+import Kpi from "./Kpi";
+import Score from "./Score";
+import Performance from "./Performance";
+import AverageSession from "./AverageSession";
+import Activity from "./Activity";
+
+// Class Js
+import User from "../class/User";
+
+// CSS
+import { StyledDashboard } from "./styles/Dashboard.styled";
+import energy from "../design/energy.svg";
+import chicken from "../design/chicken.svg";
+import cheeseburger from "../design/cheeseburger.svg";
+import apple from "../design/apple.svg";
+
+function Dashboard() {
+  let { id } = useParams();
+  const token = localStorage.getItem("accessToken");
+  const [getUserById, setgetUserById] = useState({});
+  const [getUserActivityById, setgetUserActivityById] = useState({});
+  const [getUserAverageSessionById, setgetUserAverageSessionById] = useState(
+    {}
+  );
+  const [getUserPerformanceById, setgetUserPerformanceById] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetch = async (id) => {
+      const USER = await getUser(id);
+      const ACTIVITY = await getActivity(id);
+      const AVERAGE_SESSIONS = await getAverageSessions(id);
+      const PERFORMANCE = await getPerformance(id);
+
+      setgetUserById(USER);
+      setgetUserActivityById(ACTIVITY);
+      setgetUserAverageSessionById(AVERAGE_SESSIONS);
+      setgetUserPerformanceById(PERFORMANCE);
+      setIsLoading(false);
+    };
+    fetch(id);
+  }, [id]);
+
+  /**
+   * Link to User class.
+   * See {@link User}
+   */
+  const USER_CLASS = !isLoading
+    ? new User(
+        getUserById?.data.userInfos.firstName,
+        getUserById?.data.userInfos.lastName,
+        getUserById?.data.userInfos.age,
+        getUserById?.data.score
+          ? getUserById.data.score
+          : getUserById.data.todayScore,
+        getUserById?.data.keyData.calorieCount,
+        getUserById?.data.keyData.proteinCount,
+        getUserById?.data.keyData.carbohydrateCount,
+        getUserById?.data.keyData.lipidCount
+      )
+    : "";
+
+  // console.log(USER_CLASS);
+
+  return (
+    &lt;StyledDashboard className="dashboard">
+      {isLoading &amp;&amp; token === id ? (
+        &lt;p>Wait and sportSee... 😎&lt;/p>
+      ) : (
+        &lt;>
+          &lt;HeaderDashboard first={USER_CLASS.firstName} />
+          &lt;div className="dashboard__charts">
+            &lt;div className="dashboard__charts-left">
+              &lt;Activity userActivityData={getUserActivityById} />
+              &lt;AverageSession averageSessionsData={getUserAverageSessionById} />
+              &lt;Performance performanceData={getUserPerformanceById} />
+              &lt;Score scoreData={USER_CLASS.arrayOfPercentScore} />
+            &lt;/div>
+            &lt;div className="dashboard__charts-right">
+              &lt;Kpi
+                image={energy}
+                value={USER_CLASS.calorie}
+                title="Calories"
+                unity="kCal"
+                color="red"
+              />
+              &lt;Kpi
+                image={chicken}
+                value={USER_CLASS.protein}
+                title="Proteines"
+                unity="g"
+                color="blue"
+              />
+              &lt;Kpi
+                image={apple}
+                value={USER_CLASS.carbohydrate}
+                title="Glucides"
+                unity="g"
+                color="yellow"
+              />
+              &lt;Kpi
+                image={cheeseburger}
+                value={USER_CLASS.lipid}
+                title="Lipides"
+                unity="g"
+                color="pink"
+              />
+            &lt;/div>
+          &lt;/div>
+        &lt;/>
+      )}
+    &lt;/StyledDashboard>
+  );
+}
+
+export default Dashboard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="User.html">User</a></li><li><a href="UserActivity.html">UserActivity</a></li><li><a href="UserAverageSession.html">UserAverageSession</a></li><li><a href="UserPerformance.html">UserPerformance</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-tutorial.html">tutorial</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#getActivity">getActivity</a></li><li><a href="global.html#getAverageSessions">getAverageSessions</a></li><li><a href="global.html#getPerformance">getPerformance</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#Kpi">Kpi</a></li><li><a href="global.html#RenderLegend">RenderLegend</a></li><li><a href="global.html#SetUserToken">SetUserToken</a></li><li><a href="global.html#Userindex">Userindex</a></li><li><a href="global.html#YEAR">YEAR</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu May 26 2022 18:50:34 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: index.js</title>
+    <title>JSDoc: Source: pages/Userindex.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: index.js</h1>
+    <h1 class="page-title">Source: pages/Userindex.js</h1>
 
     
 
@@ -27,56 +27,25 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "../components/Dashboard";
 
 // CSS
-import GlobalStyle from "./theme/globalStyle";
-import { ThemeProvider } from "styled-components";
-import themeStyled from "./theme/schema.json";
-
-// Pages
-import Home from "./pages/Home";
-import Userindex from "./pages/Userindex";
-import Settings from "./pages/Settings";
-import Community from "./pages/Community";
-import PageNotFound from "./pages/PageNotFound";
-
-// Components
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import { StyledUserindex } from "./styles/Userindex.styled";
 
 /**
- * @file index.js is the home page for this app
- * @author Git504
- * @see &lt;a href="https://github.com/git504">Git504 Page&lt;a/>
+ * @description The Dashboard REACT component
+ * @property {Function} Userindex print out all the data visualization
+ * @returns { HTMLElement}
  */
+function Userindex() {
+  return (
+    &lt;StyledUserindex className="user">
+      &lt;Dashboard />
+    &lt;/StyledUserindex>
+  );
+}
 
-ReactDOM.render(
-  &lt;React.StrictMode>
-    &lt;GlobalStyle />
-    &lt;Router>
-      &lt;ThemeProvider theme={themeStyled}>
-        &lt;Header />
-        &lt;Sidebar />
-        &lt;Routes>
-          &lt;Route index element={&lt;Home />} />
-          &lt;Route path="/user/:id" element={&lt;Userindex />} />
-          &lt;Route path="/settings" element={&lt;Settings />} />
-          &lt;Route path="/community" element={&lt;Community />} />
-          &lt;Route path="*" element={&lt;PageNotFound />} />
-        &lt;/Routes>
-      &lt;/ThemeProvider>
-    &lt;/Router>
-  &lt;/React.StrictMode>,
-  document.getElementById("root")
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default Userindex;
 </code></pre>
         </article>
     </section>

@@ -17,18 +17,21 @@ import UserPerformance from "../class/UserPerformance";
 import { StyledPerformance } from "./styles/Performance.styled";
 
 const Performance = ({ performanceData }) => {
-  const PERFORMANCE = new UserPerformance(performanceData);
+  /**
+   * Link to User class.
+   * See {@link UserPerformance}
+   */
+  const PERFORMANCE_CLASS = new UserPerformance(performanceData);
   // console.log(performanceData);
-  // console.log(PERFORMANCE.performance);
 
   return (
     <StyledPerformance>
       {/* <ResponsiveContainer width="100%" height={250}> */}
       <RadarChart
-        outerRadius={70}
+        outerRadius={65}
         width={230}
         height={230}
-        data={PERFORMANCE.performance}
+        data={PERFORMANCE_CLASS.performance}
       >
         <PolarGrid radialLines={false} />
         <PolarAngleAxis

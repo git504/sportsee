@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: index.js</title>
+    <title>JSDoc: Source: components/Performance.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: index.js</h1>
+    <h1 class="page-title">Source: components/Performance.js</h1>
 
     
 
@@ -27,56 +27,72 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from "recharts";
+
+// Class
+import UserPerformance from "../class/UserPerformance";
 
 // CSS
-import GlobalStyle from "./theme/globalStyle";
-import { ThemeProvider } from "styled-components";
-import themeStyled from "./theme/schema.json";
+import { StyledPerformance } from "./styles/Performance.styled";
 
-// Pages
-import Home from "./pages/Home";
-import Userindex from "./pages/Userindex";
-import Settings from "./pages/Settings";
-import Community from "./pages/Community";
-import PageNotFound from "./pages/PageNotFound";
+const Performance = ({ performanceData }) => {
+  /**
+   * Link to User class.
+   * See {@link UserPerformance}
+   */
+  const PERFORMANCE_CLASS = new UserPerformance(performanceData);
+  // console.log(performanceData);
 
-// Components
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+  return (
+    &lt;StyledPerformance>
+      {/* &lt;ResponsiveContainer width="100%" height={250}> */}
+      &lt;RadarChart
+        outerRadius={65}
+        width={230}
+        height={230}
+        data={PERFORMANCE_CLASS.performance}
+      >
+        &lt;PolarGrid radialLines={false} />
+        &lt;PolarAngleAxis
+          dataKey="kind"
+          tick={{ fill: "#ffffff", fontSize: 10 }}
+          axisLine={true}
+          tickLine={true}
+        />
 
-/**
- * @file index.js is the home page for this app
- * @author Git504
- * @see &lt;a href="https://github.com/git504">Git504 Page&lt;a/>
- */
+        &lt;PolarRadiusAxis
+          tickCount={6}
+          domain={[0, 150]}
+          axisLine={false}
+          tick={false}
+        />
 
-ReactDOM.render(
-  &lt;React.StrictMode>
-    &lt;GlobalStyle />
-    &lt;Router>
-      &lt;ThemeProvider theme={themeStyled}>
-        &lt;Header />
-        &lt;Sidebar />
-        &lt;Routes>
-          &lt;Route index element={&lt;Home />} />
-          &lt;Route path="/user/:id" element={&lt;Userindex />} />
-          &lt;Route path="/settings" element={&lt;Settings />} />
-          &lt;Route path="/community" element={&lt;Community />} />
-          &lt;Route path="*" element={&lt;PageNotFound />} />
-        &lt;/Routes>
-      &lt;/ThemeProvider>
-    &lt;/Router>
-  &lt;/React.StrictMode>,
-  document.getElementById("root")
-);
+        &lt;Radar
+          dataKey="value"
+          stroke="rgba(230, 0, 0, .7)"
+          fill="#E60000"
+          fillOpacity={0.6}
+        />
+      &lt;/RadarChart>
+      {/* &lt;/ResponsiveContainer> */}
+    &lt;/StyledPerformance>
+  );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+Performance.propTypes = {
+  performanceData: PropTypes.object,
+};
+
+export default Performance;
 </code></pre>
         </article>
     </section>

@@ -1,4 +1,12 @@
-export default class UserPerformance {
+/**
+ * Creates a new SINGLE USER PERFORMANCE REPORT.
+ * @class
+ */
+class UserPerformance {
+  /**
+   * Assign the performance details to the User.
+   * @param {object} performances set the performance name with the right value.
+   */
   constructor(performances) {
     this.kind = performances.data.kind;
     this._performance = performances.data.data.map((performance) => {
@@ -13,3 +21,5 @@ export default class UserPerformance {
     return this._performance;
   }
 }
+
+export default UserPerformance;

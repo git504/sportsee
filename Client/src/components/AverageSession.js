@@ -3,22 +3,25 @@ import PropTypes from "prop-types";
 
 // Recharts
 import {
+  ResponsiveContainer,
   AreaChart,
   Area,
   XAxis,
   YAxis,
   Tooltip,
-  ResponsiveContainer,
 } from "recharts";
-
-// Class
-import UserAverageSession from "../class/UserAverageSession";
 
 // CSS
 import { StyledAverageSession } from "./styles/AverageSession.styled";
+// Class
+import UserAverageSession from "../class/UserAverageSession";
 
 const AverageSession = ({ averageSessionsData }) => {
-  const AVERAGE_SESSIONS = new UserAverageSession(averageSessionsData);
+  /**
+   * Link to User class.
+   * See {@link UserAverageSession}
+   */
+  const AVERAGE_SESSIONS_CLASS = new UserAverageSession(averageSessionsData);
 
   return (
     <>
@@ -28,7 +31,7 @@ const AverageSession = ({ averageSessionsData }) => {
         <AreaChart
           width={233}
           height={233}
-          data={AVERAGE_SESSIONS._averageSessions}
+          data={AVERAGE_SESSIONS_CLASS._averageSessions}
           margin={{
             top: 1,
             right: 7,

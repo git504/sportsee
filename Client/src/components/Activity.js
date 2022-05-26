@@ -19,6 +19,13 @@ import UserActivity from "../class/UserActivity";
 // CSS
 import { StyledActivity } from "./styles/Activity.styled";
 
+/**
+ * @function CustomTooltip
+ * @description Component to custom the tooltip of the chart
+ * @param { Boolean } active - true if bars hovered over, false if not
+ * @param { Object } payload - the data data of overflown bars
+ * @returns { HTMLElement }
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -33,6 +40,10 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const Activity = ({ userActivityData }) => {
+  /**
+   * Link to User class.
+   * See {@link UserActivity}
+   */
   const ACTIVITY_CLASS = new UserActivity(userActivityData);
 
   return (

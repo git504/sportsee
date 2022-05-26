@@ -1,14 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+// Recharts
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 
 // CSS
 import { StyledScore } from "./styles/Score.styled";
 
-const renderLegend = (props) => {
+/**
+ * @function RenderLegend
+ * @param {object} props - the props of the chart : type, value, color
+ * @description to custom the legend of the chart
+ * @returns { HTMLElement }
+ */
+const RenderLegend = (props) => {
   const { payload } = props;
-
+  // console.log(payload);
   return (
     <ul>
       {payload.map((payload, index) => {
@@ -26,7 +33,7 @@ const renderLegend = (props) => {
 };
 
 const Score = ({ scoreData }) => {
-  console.log(scoreData);
+  // console.log(scoreData);
 
   return (
     <StyledScore className="score">
@@ -55,7 +62,7 @@ const Score = ({ scoreData }) => {
           />
           <Legend
             verticalAlign="top"
-            content={renderLegend}
+            content={RenderLegend}
             wrapperStyle={{ top: "10%", left: "12%" }}
           />
         </PieChart>

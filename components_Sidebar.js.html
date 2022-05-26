@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: index.js</title>
+    <title>JSDoc: Source: components/Sidebar.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: index.js</h1>
+    <h1 class="page-title">Source: components/Sidebar.js</h1>
 
     
 
@@ -26,57 +26,62 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+            <pre class="prettyprint source linenums"><code>//@ts-check
+
+// PROPS
+import React from "react";
 
 // CSS
-import GlobalStyle from "./theme/globalStyle";
-import { ThemeProvider } from "styled-components";
-import themeStyled from "./theme/schema.json";
+import { StyledSidebar } from "./styles/Sidebar.styled";
 
-// Pages
-import Home from "./pages/Home";
-import Userindex from "./pages/Userindex";
-import Settings from "./pages/Settings";
-import Community from "./pages/Community";
-import PageNotFound from "./pages/PageNotFound";
-
-// Components
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+// DESIGN
 
 /**
- * @file index.js is the home page for this app
- * @author Git504
- * @see &lt;a href="https://github.com/git504">Git504 Page&lt;a/>
+ * @file LogoSidebar
+ * @author OPENCLASSROOMS
  */
+import LogoSidebar from "./LogoSidebar";
 
-ReactDOM.render(
-  &lt;React.StrictMode>
-    &lt;GlobalStyle />
-    &lt;Router>
-      &lt;ThemeProvider theme={themeStyled}>
-        &lt;Header />
-        &lt;Sidebar />
-        &lt;Routes>
-          &lt;Route index element={&lt;Home />} />
-          &lt;Route path="/user/:id" element={&lt;Userindex />} />
-          &lt;Route path="/settings" element={&lt;Settings />} />
-          &lt;Route path="/community" element={&lt;Community />} />
-          &lt;Route path="*" element={&lt;PageNotFound />} />
-        &lt;/Routes>
-      &lt;/ThemeProvider>
-    &lt;/Router>
-  &lt;/React.StrictMode>,
-  document.getElementById("root")
-);
+/**
+ * @file yoga.svg
+ */
+import yoga from "../design/yoga.svg";
+/**
+ * @file swimmer.svg
+ */
+import natation from "../design/swimmer.svg";
+/**
+ * @file biker.svg
+ */
+import velo from "../design/biker.svg";
+/**
+ * @file dumbbell.svg
+ */
+import alter from "../design/dumbbell.svg";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+/**
+ * get CURRENT YEAR in the sidebar
+ * @type {number}
+ */
+const YEAR = new Date().getFullYear();
+
+const Sidebar = () => {
+  return (
+    &lt;StyledSidebar className="sidebar">
+      &lt;nav className="sidebar__nav">
+        &lt;ul className="sidebar__icons">
+          &lt;LogoSidebar image={yoga} />
+          &lt;LogoSidebar image={velo} />
+          &lt;LogoSidebar image={natation} />
+          &lt;LogoSidebar image={alter} />
+        &lt;/ul>
+      &lt;/nav>
+      &lt;p className="sidebar__text">&amp;copy;{"SportSee " + YEAR}&lt;/p>
+    &lt;/StyledSidebar>
+  );
+};
+
+export default Sidebar;
 </code></pre>
         </article>
     </section>

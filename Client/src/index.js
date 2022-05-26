@@ -10,7 +10,7 @@ import themeStyled from "./theme/schema.json";
 
 // Pages
 import Home from "./pages/Home";
-import User from "./pages/User";
+import Userindex from "./pages/Userindex";
 import Settings from "./pages/Settings";
 import Community from "./pages/Community";
 import PageNotFound from "./pages/PageNotFound";
@@ -34,7 +34,7 @@ ReactDOM.render(
         <Sidebar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/user/:id" element={<User />} />
+          <Route path="/user/:id" element={<Userindex />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/community" element={<Community />} />
           <Route path="*" element={<PageNotFound />} />

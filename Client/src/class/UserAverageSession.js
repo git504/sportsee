@@ -1,4 +1,12 @@
-export default class UserAverageSession {
+/**
+ * Creates a new SINGLE USER AVERAGE SESSIONS REPORT.
+ * @class
+ */
+class UserAverageSession {
+  /**
+   * Assign the average sessions details to the User.
+   * @param {Object} averageSessions the value from the API
+   */
   constructor(averageSessions) {
     // console.log(averageSessions);
     this._averageSessions = averageSessions.data.sessions.map((session) => {
@@ -13,6 +21,10 @@ export default class UserAverageSession {
     return this._averageSessions;
   }
 
+  /**
+   * @property {Function} initDay select out the value of the day
+   * @returns {string} the first cap letter of the day. ex : LMMJVSD
+   */
   initDay = (day) => {
     switch (day) {
       case 1:
@@ -34,3 +46,5 @@ export default class UserAverageSession {
     }
   };
 }
+
+export default UserAverageSession;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledUser = styled.div`
+export const StyledUserindex = styled.div`
   &.user {
     padding-left: 117px;
     height: 100%;

@@ -1,4 +1,19 @@
+/**
+ * Creates a new USER.
+ * @class
+ */
 class User {
+  /**
+   * User details
+   * @param {string} firstName user firstname
+   * @param {string} lastName user lastname
+   * @param {number} age user age
+   * @param {number} score user score report
+   * @param {number} calorie user calorie report
+   * @param {number} protein user protein report
+   * @param {number} carbohydrate user carbohydrate report
+   * @param {number} lipid user lipid report
+   */
   constructor(
     firstName,
     lastName,
@@ -36,10 +51,14 @@ class User {
     return this.calcScore();
   }
 
+  /**
+   * @property {Function} calcScore print out the percent score
+   * @returns {(number|Array)} score percentage
+   */
   calcScore() {
     return [
-      { name: "score", value: this._score * 100 },
-      { name: "total", value: 100 - this._score * 100 },
+      { name: "score", value: this.score * 100 },
+      { name: "total", value: 100 - this.score * 100 },
     ];
   }
 

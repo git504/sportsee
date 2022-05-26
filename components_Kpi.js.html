@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: index.js</title>
+    <title>JSDoc: Source: components/Kpi.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: index.js</h1>
+    <h1 class="page-title">Source: components/Kpi.js</h1>
 
     
 
@@ -27,56 +27,46 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from "react";
-import ReactDOM from "react-dom";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // CSS
-import GlobalStyle from "./theme/globalStyle";
-import { ThemeProvider } from "styled-components";
-import themeStyled from "./theme/schema.json";
-
-// Pages
-import Home from "./pages/Home";
-import Userindex from "./pages/Userindex";
-import Settings from "./pages/Settings";
-import Community from "./pages/Community";
-import PageNotFound from "./pages/PageNotFound";
-
-// Components
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import { StyledKpi } from "./styles/Kpi.styled";
 
 /**
- * @file index.js is the home page for this app
- * @author Git504
- * @see &lt;a href="https://github.com/git504">Git504 Page&lt;a/>
+ * @function Kpi
+ * @description to render the KEY_PERFORMANCE_INDICATOR
+ * @param { String } image - Image's logo of the KPI
+ * @param { Number } value - Value of the KPI
+ * @param { String } title - Title of the KPI
+ * @param { String } color - Color of the logo's background of the KPI
+ * @param { String } unity - Value's unity of the KPI
+ * @returns { HTMLElement }
  */
+const Kpi = ({ image, value, title, color, unity }) => {
+  return (
+    &lt;StyledKpi className="kpi">
+      &lt;div className="kpi__icon">
+        &lt;div className={"kpi__img kpi__img--" + color}>
+          &lt;img src={image} alt="" />
+        &lt;/div>
+      &lt;/div>
+      &lt;div className="kpi__text">
+        &lt;p className="kpi__value">{value + unity}&lt;/p>
+        &lt;p className="kpi__title">{title}&lt;/p>
+      &lt;/div>
+    &lt;/StyledKpi>
+  );
+};
 
-ReactDOM.render(
-  &lt;React.StrictMode>
-    &lt;GlobalStyle />
-    &lt;Router>
-      &lt;ThemeProvider theme={themeStyled}>
-        &lt;Header />
-        &lt;Sidebar />
-        &lt;Routes>
-          &lt;Route index element={&lt;Home />} />
-          &lt;Route path="/user/:id" element={&lt;Userindex />} />
-          &lt;Route path="/settings" element={&lt;Settings />} />
-          &lt;Route path="/community" element={&lt;Community />} />
-          &lt;Route path="*" element={&lt;PageNotFound />} />
-        &lt;/Routes>
-      &lt;/ThemeProvider>
-    &lt;/Router>
-  &lt;/React.StrictMode>,
-  document.getElementById("root")
-);
+Kpi.propTypes = {
+  image: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  unity: PropTypes.string,
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default Kpi;
 </code></pre>
         </article>
     </section>
