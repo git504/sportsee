@@ -16,6 +16,20 @@ import UserPerformance from "../class/UserPerformance";
 // CSS
 import { StyledPerformance } from "./styles/Performance.styled";
 
+/**
+ * @file Score, a REACT functional component mount with Recharts library
+ * @see {@link https://recharts.org/} for further information.
+ */
+
+/**
+ * @description A component that provides a RadarChart of the User's Performance.
+ * @property {Function} Performance print out all the data visualization
+ * @param { Object } performanceData
+ * @param { Number } performanceData.userId - the id of the user
+ * @param { Object } performanceData.kind - the types of performance
+ * @param { Array.<Object> } performanceData.data - the performance data of the user
+ * @returns { HTMLElement}
+ */
 const Performance = ({ performanceData }) => {
   /**
    * Link to User class.
@@ -23,7 +37,6 @@ const Performance = ({ performanceData }) => {
    */
   const PERFORMANCE_CLASS = new UserPerformance(performanceData);
   // console.log(performanceData);
-
   return (
     <StyledPerformance>
       {/* <ResponsiveContainer width="100%" height={250}> */}

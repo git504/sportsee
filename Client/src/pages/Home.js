@@ -6,9 +6,16 @@ import { StyledHome } from "./styles/Home.styled";
 
 /**
  * @file Home, a REACT functional component. HOME PAGE
+ * @todo Write the page.
+ * @todo Implement this function.
  */
 
 // components
+/**
+ * @description The home page
+ * @property {Function} Home 2 buttons linked to use mocked data
+ * @returns { HTMLElement}
+ */
 const Home = () => {
   const navigate = useNavigate();
 

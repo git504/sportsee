@@ -8,6 +8,11 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
 import { StyledScore } from "./styles/Score.styled";
 
 /**
+ * @file Score, a REACT functional component mount with Recharts library
+ * @see {@link https://recharts.org/} for further information.
+ */
+
+/**
  * @function RenderLegend
  * @param {object} props - the props of the chart : type, value, color
  * @description to custom the legend of the chart
@@ -32,6 +37,12 @@ const RenderLegend = (props) => {
   );
 };
 
+/**
+ * @description A component that provides a pie chart of the User's Score.
+ * @property {Function} Score print out all the data visualization
+ * @param {array} scoreData - the score of the user
+ * @returns { HTMLElement}
+ */
 const Score = ({ scoreData }) => {
   // console.log(scoreData);
 

@@ -13,6 +13,12 @@ import {
 
 // CSS
 import { StyledAverageSession } from "./styles/AverageSession.styled";
+
+/**
+ * @file AverageSession, a REACT functional component mount with Recharts library
+ * @see {@link https://recharts.org/} for further information.
+ */
+
 // Class
 import UserAverageSession from "../class/UserAverageSession";
 

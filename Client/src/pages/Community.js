@@ -2,6 +2,8 @@ import React from "react";
 
 /**
  * @file Community, a REACT functional component. COMMUNITY PAGE
+ * @todo Write the page.
+ * @todo Implement this function.
  */
 
 function Community() {

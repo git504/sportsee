@@ -21,7 +21,7 @@ import Sidebar from "./components/Sidebar";
 
 /**
  * @file index.js is the home page for this app
- * @author Git504
+ * @author Git504 for OPENCLASSROOMS
  * @see <a href="https://github.com/git504">Git504 Page<a/>
  */
 

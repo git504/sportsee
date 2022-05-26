@@ -2,8 +2,9 @@ import React from "react";
 
 /**
  * @file Settings, a REACT functional component. SETTING PAGE
+ * @todo Write the page.
+ * @todo Implement this function.
  */
-
 function Settings() {
   return (
     <div>

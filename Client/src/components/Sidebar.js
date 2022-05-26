@@ -1,5 +1,3 @@
-//@ts-check
-
 // PROPS
 import React from "react";
 
@@ -14,12 +12,12 @@ import velo from "../design/biker.svg";
 import alter from "../design/dumbbell.svg";
 
 /**
- * get CURRENT YEAR in the sidebar
- * @type {number}
+ * @description The Component that show the Sidebar nav
+ * @property {Function} Sidebar nav by activitie
+ * @returns { HTMLElement}
  */
-const YEAR = new Date().getFullYear();
-
 const Sidebar = () => {
+  const YEAR = new Date().getFullYear();
   return (
     <StyledSidebar className="sidebar">
       <nav className="sidebar__nav">

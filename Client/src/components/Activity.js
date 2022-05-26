@@ -13,11 +13,16 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+// CSS
+import { StyledActivity } from "./styles/Activity.styled";
+
 // Class
 import UserActivity from "../class/UserActivity";
 
-// CSS
-import { StyledActivity } from "./styles/Activity.styled";
+/**
+ * @file Activity, a REACT functional component mount with Recharts library
+ * @see {@link https://recharts.org/} for further information.
+ */
 
 /**
  * @function CustomTooltip
