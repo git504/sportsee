@@ -44,6 +44,14 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+/**
+ * @function Activity
+ * @description Component that shows a bar chart of the weight and calories burned for the day by the user
+ * @param { Object } userActivity
+ * @param { Array.<Objects> } userActivity.sessions - the sessions of the user
+ * @param { Number } userActivity.userId - the Id of the user
+ * @returns { HTMLElement }
+ */
 const Activity = ({ userActivityData }) => {
   /**
    * Link to User class.

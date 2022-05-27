@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 import { StyledHeader } from "./styles/Header.styled";
 import logo from "../design/logo.svg";
 
-
+/**
+ * @function Header 
+ * @description Show the header of the site with the navigation
+ * @returns { HTMLElement }
+ */
 const Header = () => {
   return (
     <StyledHeader className="header">

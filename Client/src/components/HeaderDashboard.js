@@ -4,6 +4,12 @@ import PropTypes from "prop-types";
 // CSS
 import { StyledHeaderDashboard } from "./styles/HeaderDashboard.styled";
 
+/**
+ * @function HeaderDashboard
+ * @description Show the header of the dashboard and return the user name
+ * @param { String } firstname - the firstname of the user
+ * @returns { HTMLElement }
+ */
 const HeaderDashboard = ({ first }) => {
   return (
     <StyledHeaderDashboard className="dashboardHeader">

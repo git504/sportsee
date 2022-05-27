@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: UserPerformance</title>
+    <title>JSDoc: Source: components/HeaderDashboard.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,190 +17,49 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: UserPerformance</h1>
+    <h1 class="page-title">Source: components/HeaderDashboard.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>UserPerformance<span class="signature">(performances)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description"><p>Creates a new SINGLE USER PERFORMANCE REPORT.</p></div>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-    
-    <h2>Constructor</h2>
-    
-
-    
-    <h4 class="name" id="UserPerformance"><span class="type-signature"></span>new UserPerformance<span class="signature">(performances)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Assign the performance details to the User.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>performances</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>set the performance name with the right value.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="class_UserPerformance.js.html">class/UserPerformance.js</a>, <a href="class_UserPerformance.js.html#line5">line 5</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import PropTypes from "prop-types";
+
+// CSS
+import { StyledHeaderDashboard } from "./styles/HeaderDashboard.styled";
+
+/**
+ * @function HeaderDashboard
+ * @description Show the header of the dashboard and return the user name
+ * @param { String } firstname - the firstname of the user
+ * @returns { HTMLElement }
+ */
+const HeaderDashboard = ({ first }) => {
+  return (
+    &lt;StyledHeaderDashboard className="dashboardHeader">
+      &lt;h1 className="dashboardHeader__title">
+        Bonjour
+        &lt;span className="dashboardHeader__name">{" " + first}&lt;/span>
+      &lt;/h1>
+      &lt;p className="dashboardHeader__text">
+        Félicitation ! Vous avez explosé vos objectifs hier 👏
+      &lt;/p>
+    &lt;/StyledHeaderDashboard>
+  );
+};
+
+HeaderDashboard.propTypes = {
+  first: PropTypes.string.isRequired,
+};
+
+export default HeaderDashboard;
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-// Data
+// API
 import {
   getUser,
   getActivity,
@@ -9,7 +9,7 @@ import {
   getPerformance,
 } from "../api/api";
 
-// Components
+// REACT Components
 import HeaderDashboard from "./HeaderDashboard";
 import Kpi from "./Kpi";
 import Score from "./Score";
@@ -17,16 +17,21 @@ import Performance from "./Performance";
 import AverageSession from "./AverageSession";
 import Activity from "./Activity";
 
-// Class Js
+// JS Class
 import User from "../class/User";
 
-// CSS
+// CSS Style
 import { StyledDashboard } from "./styles/Dashboard.styled";
 import energy from "../design/energy.svg";
 import chicken from "../design/chicken.svg";
 import cheeseburger from "../design/cheeseburger.svg";
 import apple from "../design/apple.svg";
 
+/**
+ * @function Dashboard
+ * @description Return the the user dashboard
+ * @returns { HTMLElement }
+ */
 function Dashboard() {
   let { id } = useParams();
   const token = localStorage.getItem("accessToken");
@@ -72,8 +77,6 @@ function Dashboard() {
         getUserById?.data.keyData.lipidCount
       )
     : "";
-
-  // console.log(USER_CLASS);
 
   return (
     <StyledDashboard className="dashboard">

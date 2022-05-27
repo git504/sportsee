@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// Recharts
+// Recharts Library
 import {
   ResponsiveContainer,
   AreaChart,
@@ -11,7 +11,7 @@ import {
   Tooltip,
 } from "recharts";
 
-// CSS
+// CSS Style
 import { StyledAverageSession } from "./styles/AverageSession.styled";
 
 /**
@@ -19,9 +19,17 @@ import { StyledAverageSession } from "./styles/AverageSession.styled";
  * @see {@link https://recharts.org/} for further information.
  */
 
-// Class
+// JS Class
 import UserAverageSession from "../class/UserAverageSession";
 
+/**
+ * @function AverageSession 
+ * @description Recharts line graph that show average duration in minutes of user's sport sessions
+ * @param { Object } averageSessionsData All the data needed for the Line chart
+ * @param { Array.<Objects> } averageSessionsData.sessions - the sessions of the user
+ * @param { Number } averageSessionsData.userId - the Id of the user
+ * @returns { HTMLElement }
+ */
 const AverageSession = ({ averageSessionsData }) => {
   /**
    * Link to User class.
