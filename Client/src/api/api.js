@@ -2,20 +2,25 @@ import axios from "axios";
 import * as USER_DATA from "../__mocks__/datamocked";
 
 // to switch between API and mocked userdata
+/**
+ * @description function to fetch the data from the API and switch between API and mocked user
+ * @property {Function} getUser
+ * @param { number } id - The Id of the user
+ * @param { string } switchParam - The Id of the user
+ * @param { string } uri - The Id of the user
+ * @returns Object
+ */
 async function getURL(id, switchParam, uri) {
   if (switchParam === "api") {
     try {
       const response = await axios.get(
         `http://localhost:1234/user/${id}/${uri}`
       );
-      // console.log(response.data.data);
       return response.data.data;
     } catch (error) {
       console.error(error);
     }
   } else if (switchParam === "mock") {
-    // console.log(USER_DATA.USER_MAIN_DATA);
-
     switch (uri) {
       case "":
         const user = USER_DATA.USER_MAIN_DATA.find(
