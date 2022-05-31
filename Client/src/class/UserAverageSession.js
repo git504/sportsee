@@ -9,7 +9,7 @@ class UserAverageSession {
    */
   constructor(averageSessions) {
     // console.log(averageSessions);
-    this._averageSessions = averageSessions.data.sessions.map((session) => {
+    this._averageSessions = averageSessions.sessions.map((session) => {
       return {
         name: this.initDay(session.day),
         ...session,

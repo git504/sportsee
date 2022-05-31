@@ -8,7 +8,7 @@ class UserActivity {
    * @param {Object} averageSessions the value from the API.
    */
   constructor(data) {
-    this._activities = data.data.sessions.map((session) => {
+    this._activities = data.sessions.map((session) => {
       // console.log(this.initDate(session.day));
       return {
         name: this.initDate(session.day),

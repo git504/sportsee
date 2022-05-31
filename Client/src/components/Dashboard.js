@@ -65,16 +65,14 @@ function Dashboard() {
    */
   const USER_CLASS = !isLoading
     ? new User(
-        getUserById?.data.userInfos.firstName,
-        getUserById?.data.userInfos.lastName,
-        getUserById?.data.userInfos.age,
-        getUserById?.data.score
-          ? getUserById.data.score
-          : getUserById.data.todayScore,
-        getUserById?.data.keyData.calorieCount,
-        getUserById?.data.keyData.proteinCount,
-        getUserById?.data.keyData.carbohydrateCount,
-        getUserById?.data.keyData.lipidCount
+        getUserById?.userInfos.firstName,
+        getUserById?.userInfos.lastName,
+        getUserById?.userInfos.age,
+        getUserById?.score ? getUserById.score : getUserById.todayScore,
+        getUserById?.keyData.calorieCount,
+        getUserById?.keyData.proteinCount,
+        getUserById?.keyData.carbohydrateCount,
+        getUserById?.keyData.lipidCount
       )
     : "";
 

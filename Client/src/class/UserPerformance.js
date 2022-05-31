@@ -8,8 +8,8 @@ class UserPerformance {
    * @param {object} performances set the performance name with the right value.
    */
   constructor(performances) {
-    this.kind = performances.data.kind;
-    this._performance = performances.data.data.map((performance) => {
+    this.kind = performances.kind;
+    this._performance = performances.data.map((performance) => {
       return {
         ...performance,
         kind: this.kind[performance.kind],
