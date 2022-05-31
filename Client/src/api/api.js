@@ -23,29 +23,26 @@ async function getURL(id, userswitch, uri) {
   } else if (userswitch === "mock") {
     switch (uri) {
       case "":
-        const user = MOCKED_DATA.USER_MAIN_DATA.find(
+        const MOCKED_USER = MOCKED_DATA.USER_MAIN_DATA.find(
           (user) => user.id === parseInt(id)
         );
-        // console.log(user);
-        return user;
+        return MOCKED_USER;
       case "activity":
-        const userActivity = MOCKED_DATA.USER_ACTIVITY.find(
+        const MOCKED_USER_ACTIVITY = MOCKED_DATA.USER_ACTIVITY.find(
           (user) => user.userId === parseInt(id)
         );
-        // console.log(userActivity);
-        return userActivity;
+        return MOCKED_USER_ACTIVITY;
       case "average-sessions":
-        const userAverageSession = MOCKED_DATA.USER_AVERAGE_SESSIONS.find(
-          (user) => user.userId === parseInt(id)
-        );
-        // console.log(userAverageSession);
-        return userAverageSession;
+        const MOCKED_USER_AVERAGE_SESSIONS =
+          MOCKED_DATA.USER_AVERAGE_SESSIONS.find(
+            (user) => user.userId === parseInt(id)
+          );
+        return MOCKED_USER_AVERAGE_SESSIONS;
       case "performance":
-        const userPerformance = MOCKED_DATA.USER_PERFORMANCE.find(
+        const MOCKED_USER_PERFORMANCE = MOCKED_DATA.USER_PERFORMANCE.find(
           (user) => user.userId === parseInt(id)
         );
-        // console.log(userPerformance);
-        return userPerformance;
+        return MOCKED_USER_PERFORMANCE;
       default:
         break;
     }
@@ -59,9 +56,7 @@ async function getURL(id, userswitch, uri) {
  * @returns Object
  */
 async function getUser(id, userswitch) {
-  console.log(id, userswitch);
   return await getURL(id, userswitch, "");
-  // return await getURL(id, "user", "");
 }
 
 /**
@@ -72,7 +67,6 @@ async function getUser(id, userswitch) {
  */
 async function getActivity(id, userswitch) {
   return await getURL(id, userswitch, "activity");
-  // return await getURL(id, "user", "activity");
 }
 
 /**
@@ -83,7 +77,6 @@ async function getActivity(id, userswitch) {
  */
 async function getAverageSessions(id, userswitch) {
   return await getURL(id, userswitch, "average-sessions");
-  // return await getURL(id, "user", "average-sessions");
 }
 
 /**
@@ -94,7 +87,6 @@ async function getAverageSessions(id, userswitch) {
  */
 async function getPerformance(id, userswitch) {
   return await getURL(id, userswitch, "performance");
-  // return await getURL(id, "user", "performance");
 }
 
 export { getUser, getActivity, getAverageSessions, getPerformance };
