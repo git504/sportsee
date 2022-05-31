@@ -24,10 +24,10 @@ const Home = () => {
    * @param {number} id user id in url
    * @description login function : new ID "accessToken" , then navigate to the single user dashboard thanks to his id.
    */
-  const SetUserToken = (id) => {
+  const SetUserToken = (user, id) => {
     localStorage.removeItem("accessToken");
     localStorage.setItem("accessToken", id);
-    navigate(`/user/${id}`);
+    navigate(`/${user}/${id}`);
   };
 
   return (
@@ -36,18 +36,34 @@ const Home = () => {
         <button
           className="home__links--link"
           onClick={() => {
-            SetUserToken(18);
+            SetUserToken("user", 12);
           }}
         >
-          user __mock18__
+          🏆 API_user ⑫
         </button>
         <button
           className="home__links--link"
           onClick={() => {
-            SetUserToken(12);
+            SetUserToken("mock", 12);
           }}
         >
-          user __mock12__
+          🏆 MOCK_user ⑫
+        </button>
+        <button
+          className="home__links--link"
+          onClick={() => {
+            SetUserToken("user", 18);
+          }}
+        >
+          🏆 API_user ⑱
+        </button>
+        <button
+          className="home__links--link"
+          onClick={() => {
+            SetUserToken("mock", 18);
+          }}
+        >
+          🏆 MOCK_user ⑱
         </button>
       </div>
     </StyledHome>

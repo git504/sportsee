@@ -34,6 +34,7 @@ import apple from "../design/apple.svg";
  */
 function Dashboard() {
   let { id } = useParams();
+  let { userswitch } = useParams();
   const token = localStorage.getItem("accessToken");
   const [getUserById, setgetUserById] = useState({});
   const [getUserActivityById, setgetUserActivityById] = useState({});
@@ -44,11 +45,11 @@ function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetch = async (id) => {
-      const USER = await getUser(id);
-      const ACTIVITY = await getActivity(id);
-      const AVERAGE_SESSIONS = await getAverageSessions(id);
-      const PERFORMANCE = await getPerformance(id);
+    const fetch = async (id, userswitch) => {
+      const USER = await getUser(id, userswitch);
+      const ACTIVITY = await getActivity(id, userswitch);
+      const AVERAGE_SESSIONS = await getAverageSessions(id, userswitch);
+      const PERFORMANCE = await getPerformance(id, userswitch);
 
       setgetUserById(USER);
       setgetUserActivityById(ACTIVITY);
@@ -56,8 +57,8 @@ function Dashboard() {
       setgetUserPerformanceById(PERFORMANCE);
       setIsLoading(false);
     };
-    fetch(id);
-  }, [id]);
+    fetch(id, userswitch);
+  }, [id, userswitch]);
 
   /**
    * Link to User class.

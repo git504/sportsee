@@ -34,7 +34,7 @@ ReactDOM.render(
         <Sidebar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/user/:id" element={<Userindex />} />
+          <Route path="/:userswitch/:id" element={<Userindex />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/community" element={<Community />} />
           <Route path="*" element={<PageNotFound />} />
