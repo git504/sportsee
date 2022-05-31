@@ -33,38 +33,47 @@ const Home = () => {
   return (
     <StyledHome className="home">
       <div className="home__links">
-        <button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken("user", 12);
-          }}
-        >
-          🏆 API_user ⑫
-        </button>
-        <button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken("mock", 12);
-          }}
-        >
-          🏆 MOCK_user ⑫
-        </button>
-        <button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken("user", 18);
-          }}
-        >
-          🏆 API_user ⑱
-        </button>
-        <button
-          className="home__links--link"
-          onClick={() => {
-            SetUserToken("mock", 18);
-          }}
-        >
-          🏆 MOCK_user ⑱
-        </button>
+        <div>
+          <button
+            className="home__links--link"
+            onClick={() => {
+              SetUserToken("user", 12);
+            }}
+          >
+            🏆 API_user ⑫
+          </button>
+        </div>
+        <div>
+          <button
+            className="home__links--link"
+            onClick={() => {
+              SetUserToken("user", 18);
+            }}
+          >
+            🏆 API_user ⑱
+          </button>
+        </div>
+        <div>
+          <button
+            className="home__links--link"
+            onClick={() => {
+              SetUserToken("mock", 12);
+            }}
+          >
+            🏆 MOCK_user ⑫
+          </button>
+        </div>
+
+        <div>
+          <button
+            className="home__links--link"
+            onClick={() => {
+              SetUserToken("mock", 18);
+            }}
+          >
+            🏆 MOCK_user ⑱
+          </button>
+        </div>
       </div>
     </StyledHome>
   );

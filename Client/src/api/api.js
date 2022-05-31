@@ -26,25 +26,25 @@ async function getURL(id, userswitch, uri) {
         const user = MOCKED_DATA.USER_MAIN_DATA.find(
           (user) => user.id === parseInt(id)
         );
-        console.log(user);
+        // console.log(user);
         return user;
       case "activity":
         const userActivity = MOCKED_DATA.USER_ACTIVITY.find(
           (user) => user.userId === parseInt(id)
         );
-        console.log(userActivity);
+        // console.log(userActivity);
         return userActivity;
       case "average-sessions":
         const userAverageSession = MOCKED_DATA.USER_AVERAGE_SESSIONS.find(
           (user) => user.userId === parseInt(id)
         );
-        console.log(userAverageSession);
+        // console.log(userAverageSession);
         return userAverageSession;
       case "performance":
         const userPerformance = MOCKED_DATA.USER_PERFORMANCE.find(
           (user) => user.userId === parseInt(id)
         );
-        console.log(userPerformance);
+        // console.log(userPerformance);
         return userPerformance;
       default:
         break;
